@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+
+    <style>
+        body {
+            background-color: #070908;    
+        }
+
+        .nav {
+            height: 50px;
+            width: 100%;
+            background-color: #15150d;
+            display: flex;
+            position: fixed;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .nav .positions {
+            display: inline-flex;
+            margin-left: 20px;
+        }
+
+        .nav .positions .position {
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+        }
+
+        .nav .positions .position:nth-child(1) .position_image {
+            background-image: url("./champions/top.png");
+        }
+        .nav .positions .position:nth-child(2) .position_image {
+            background-image: url("./champions/jungle.png");
+        }
+        .nav .positions .position:nth-child(3) .position_image {
+            background-image: url("./champions/mid.png");
+        }
+        .nav .positions .position:nth-child(4) .position_image {
+            background-image: url("./champions/bottom.png");
+        }
+        :nth-child(5) .position_image {
+            background-image: url("./champions/support.png");
+        }
+
+        .nav .positions .position .position_image {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .nav .filter {
+            display: inline-flex;
+            margin-right: 20px;
+        }
+
+        .container .champions {
+            display: flex;
+            max-width: 1000px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .container .champions .champion {
+            width: 100px;
+            height: 100px;
+            margin: 20px 25px;
+            border: 2px solid #1f272f;
+            transition: 1s;
+        }
+
+        .container .champions .champion:hover {
+            border-color: azure;
+        }
+        
+        .container .champions .champion:active {
+            filter: grayscale(100%);
+            border-radius: 5px;
+        }
+
+        .container .champions .champion .champion_image {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container .champions .champion:nth-child(1) .champion_image {
+            background-image: url("./champions/01.png");
+        }
+        .container .champions .champion:nth-child(2) .champion_image {
+            background-image: url("./champions/02.png");
+        }
+        .container .champions .champion:nth-child(3) .champion_image {
+            background-image: url("./champions/03.png");
+        }
+        .container .champions .champion:nth-child(4) .champion_image {
+            background-image: url("./champions/04.png");
+        }
+        .container .champions .champion:nth-child(5) .champion_image {
+            background-image: url("./champions/05.png");
+        }
+        .container .champions .champion:nth-child(6) .champion_image {
+            background-image: url("./champions/06.png");
+        }
+        .container .champions .champion:nth-child(7) .champion_image {
+            background-image: url("./champions/07.png");
+        }
+        .container .champions .champion:nth-child(8) .champion_image {
+            background-image: url("./champions/08.png");
+        }
+        .container .champions .champion:nth-child(9) .champion_image {
+            background-image: url("./champions/09.png");
+        }
+        .container .champions .champion:nth-child(10) .champion_image {
+            background-image: url("./champions/10.png");
+        }
+        .container .champions .champion:nth-child(11) .champion_image {
+            background-image: url("./champions/11.png");
+        }
+        .container .champions .champion:nth-child(12) .champion_image {
+            background-image: url("./champions/12.png");
+        }
+        .container .champions .champion:nth-child(13) .champion_image {
+            background-image: url("./champions/13.png");
+        }
+        .container .champions .champion:nth-child(14) .champion_image {
+            background-image: url("./champions/14.png");
+        }
+        .container .champions .champion:nth-child(15) .champion_image {
+            background-image: url("./champions/15.png");
+        }
+        .container .champions .champion:nth-child(16) .champion_image {
+            background-image: url("./champions/16.png");
+        }
+        .container .champions .champion:nth-child(17) .champion_image {
+            background-image: url("./champions/17.png");
+        }
+        .container .champions .champion:nth-child(18) .champion_image {
+            background-image: url("./champions/18.png");
+        }
+        .container .champions .champion:nth-child(19) .champion_image {
+            background-image: url("./champions/19.png");
+        }
+        .container .champions .champion:nth-child(20) .champion_image {
+            background-image: url("./champions/20.png");
+        }
+        .container .champions .champion:nth-child(21) .champion_image {
+            background-image: url("./champions/21.png");
+        }
+        .container .champions .champion:nth-child(22) .champion_image {
+            background-image: url("./champions/22.png");
+        }
+        .container .champions .champion:nth-child(23) .champion_image {
+            background-image: url("./champions/23.png");
+        }
+        .container .champions .champion:nth-child(24) .champion_image {
+            background-image: url("./champions/24.png");
+        }
+        .container .champions .champion:nth-child(25) .champion_image {
+            background-image: url("./champions/25.png");
+        }
+        .container .champions .champion:nth-child(26) .champion_image {
+            background-image: url("./champions/26.png");
+        }
+        .container .champions .champion:nth-child(27) .champion_image {
+            background-image: url("./champions/27.png");
+        }
+        .container .champions .champion:nth-child(28) .champion_image {
+            background-image: url("./champions/28.png");
+        }
+        .container .champions .champion:nth-child(29) .champion_image {
+            background-image: url("./champions/29.png");
+        }
+        .container .champions .champion:nth-child(30) .champion_image {
+            background-image: url("./champions/30.png");
+        }
+
+        .container .champions .champion .name {
+            font-size: 10pt;
+            text-align: center;
+            margin-top: 8px;
+            color: #85857b;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="positions">
+            <div class="position">
+                <div class="position_image"></div>
+            </div>
+            <div class="position">
+                <div class="position_image"></div>
+            </div>
+            <div class="position">
+                <div class="position_image"></div>
+            </div>
+            <div class="position">
+                <div class="position_image"></div>
+            </div>
+            <div class="position">
+                <div class="position_image"></div>
+            </div>
+        </div>
+
+        <div class="filter">
+            <select name="sort">
+                <option>이름순 정렬</option>
+                <option>숙련도 기준 정렬</option>
+                <option>선호 기준 정렬</option>
+            </select>
+
+            <input type="text" placeholder="검색" name="search" />
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="champions">
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">무작위</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">가렌</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">갈리오</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">갱플랭크</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">그라가스</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">그레이브즈</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">그웬</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">나르</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">나미</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">나서스</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">노틸러스</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">녹턴</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">누누와 윌럼프</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">니달리</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">니코</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">다리우스</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">다이애나</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">드레이븐</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">라이즈</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">라칸</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">람머스</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">럭스</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">럼블</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">레나타 글라스크</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">레넥톤</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">레오나</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">렉사이</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">렐</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">렝가</div>
+            </div>
+            <div class="champion">
+                <div class="champion_image"></div>
+                <div class="name">루시안</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
